@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:_3DPrintHub"
+             x:Class="_3DPrintHub.MainPage"
+             BackgroundColor="#df7800"
+             Padding="40"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <Label Text="Welcome to 3DPrintHub!" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold" TextColor="White"/>
+        <Image x:Name="splashscreen" VerticalOptions="CenterAndExpand" />
+        <Button Text="Start your first Project" Clicked="Button_Clicked" VerticalOptions="End" BackgroundColor="White"/>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_3DPrintHub.EntryPage"
+             BackgroundColor="#df7800"
+             Padding="40"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ContentPage.Content>
+        <StackLayout BindingContext="{x:Reference update_button}">
+            <Label Text="Your current printer Status" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold" TextColor="White"/>
+            
+            <Label x:Name="actual_temp" Text="{Binding Value, StringFormat='Actual Temperature is {0:F2}'}"/>
+            <Label x:Name="offset_temp" Text="{Binding Value, StringFormat='Offset Temperature is {0:F2}'}"/>
+            <Label x:Name="target_temp" Text="{Binding Value, StringFormat='Target Temperature is {0:F2}'}"/>
+
+
+            <Button x:Name="update_button" Text="Retrieve Printer Status" Clicked="Button_Clicked_1"/>
+
+            <Button Text="Back" Clicked="Button_Clicked" VerticalOptions="End" BackgroundColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
