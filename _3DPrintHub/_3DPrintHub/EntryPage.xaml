@@ -8,12 +8,33 @@
     
     <ContentPage.Content>
         <StackLayout BindingContext="{x:Reference update_button}">
-            <Label Text="Your current printer Status" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold" TextColor="White"/>
-            
-            <Label x:Name="actual_temp" Text="{Binding Value, StringFormat='Actual Temperature is {0:F2}'}"/>
-            <Label x:Name="offset_temp" Text="{Binding Value, StringFormat='Offset Temperature is {0:F2}'}"/>
-            <Label x:Name="target_temp" Text="{Binding Value, StringFormat='Target Temperature is {0:F2}'}"/>
+            <Label Text="Your current printer Status" HorizontalOptions="Center" VerticalOptions="Start"  FontSize="Large" FontAttributes="Bold" TextColor="White"/>
 
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image x:Name="state_icon" HeightRequest="50" Grid.Row="0" Grid.Column="0"  />
+                    <Label x:Name="operational_state" FontSize="Large" TextColor="Black" VerticalOptions="Center" Text="{Binding Value}" Grid.Row="0" Grid.Column="1" />
+
+                    <Image x:Name="temperature" HeightRequest="100" Grid.Row="1" Grid.Column="0"/>
+                    <Label x:Name="actual_temp" FontSize="Large" TextColor="Black" VerticalOptions="Center" Text="{Binding Value, StringFormat='Actual Temperature is {0:F2}'}" Grid.Row="1" Grid.Column="1" />
+
+                    <Image x:Name="temperature1" HeightRequest="100" Grid.Row="2" Grid.Column="0"/>
+                    <Label x:Name="offset_temp" FontSize="Large" TextColor="Black" VerticalOptions="Center" Text="{Binding Value, StringFormat='Offset Temperature is {0:F2}'}" Grid.Row="2" Grid.Column="1"/>
+
+                    <Image x:Name="temperature2" HeightRequest="100" Grid.Row="3" Grid.Column="0" />
+                    <Label x:Name="target_temp" FontSize="Large" TextColor="Black" VerticalOptions="Center" Text="{Binding Value, StringFormat='Target Temperature is {0:F2}'}" Grid.Row="3" Grid.Column="1"/>
+                </Grid>
+            </StackLayout>
+            
 
             <Button x:Name="update_button" Text="Retrieve Printer Status" Clicked="Button_Clicked_1"/>
 

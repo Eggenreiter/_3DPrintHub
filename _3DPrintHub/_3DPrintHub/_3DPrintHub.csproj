@@ -11,10 +11,18 @@
 
   <ItemGroup>
     <None Remove="Images\splash_logo.png" />
+    <None Remove="Images\state.png" />
+    <None Remove="Images\temperature.png" />
+    <None Remove="Images\temperature1.png" />
+    <None Remove="Images\temperature2.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Images\splash_logo.png" />
+    <EmbeddedResource Include="Images\state.png" />
+    <EmbeddedResource Include="Images\temperature.png" />
+    <EmbeddedResource Include="Images\temperature1.png" />
+    <EmbeddedResource Include="Images\temperature2.png" />
   </ItemGroup>
 
   <ItemGroup>
